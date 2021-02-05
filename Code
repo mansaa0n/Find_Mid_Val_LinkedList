@@ -1,0 +1,62 @@
+class Node:
+    def __init__(self, Value):
+        self.Value = Value
+        self.next = None
+
+
+class SlinkedList:
+    def __init__(self):
+        self.head = None
+
+    def Add2List(self, val):
+        NewNode = Node(val)
+        if self.head is None:
+            self.head = NewNode
+            return
+        else:
+            lastVal = self.head
+            while(lastVal.next):
+                lastVal = lastVal.next
+            lastVal.next = NewNode
+            return
+
+
+def FindMidValue(SlinkedList):
+    headVal = SlinkedList.head
+
+    fPointer = headVal
+    sPointer = headVal
+
+    while (fPointer.next is not None and fPointer.next.next is not None):
+        fPointer = fPointer.next.next
+        sPointer = sPointer.next
+    print(sPointer.Value)
+
+####################  ###################
+#   In a single Linked List find the middle value
+#
+#   Ans: Use 2 pointers to find the value faster
+#
+#
+###################### Main #####
+
+
+SList = SlinkedList()
+SList.Add2List("1")
+SList.Add2List("2")
+SList.Add2List("3")
+SList.Add2List("4")
+SList.Add2List("5")
+SList.Add2List("6")
+SList.Add2List("7")
+SList.Add2List("8")
+SList.Add2List("9")
+SList.Add2List("10")
+SList.Add2List("11")
+SList.Add2List("12")
+SList.Add2List("13")
+SList.Add2List("14")
+SList.Add2List("15")
+SList.Add2List("16")
+
+FindMidValue(SList)
